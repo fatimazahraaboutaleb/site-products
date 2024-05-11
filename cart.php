@@ -25,8 +25,8 @@ if(@$_GET["action"]=="delete" && @$_GET["id"]){
             font-size:large;
         }
         img{
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
         }
         td,th{
             padding: 6px;
