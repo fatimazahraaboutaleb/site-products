@@ -3,6 +3,12 @@ $conn = new PDO("mysql:host=localhost; dbname=products", "root", "");
 $query=$conn->query("SELECT * FROM cart");
 $query->execute();
 $rows = $query->fetchAll(PDO::FETCH_OBJ);
+if(@$_GET["action"]=="delete" && @$_GET["id"]){
+    $id=@$_GET["id"];
+    $query=$conn->prepare("DELETE FROM cart WHERE id=?");
+    $query->execute([$id]);
+    header("location:cart.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,20 +17,49 @@ $rows = $query->fetchAll(PDO::FETCH_OBJ);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        
+        table{
+            width:90%;
+            margin:auto;
+            text-align:center;
+            font-size:large;
+        }
         img{
-            width: 100px;
-            height: 100px;
+            width: 60px;
+            height: 60px;
+        }
+        td,th{
+            padding: 6px;
+        }
+        th{
+            color:white ;
+            background-color:#50C4ED;
+        }
+        .price{
+            color:#FBA834;
+        }
+        button{
+            background-color:#387ADF;
+            border:1px solid #FBA834;
+            border-radius: 10px 35px;
+            color:white;
+            padding:6px 10px;
+        }
+        button:hover{
+            background-color:#FBA834;
+            border:1px solid #387ADF;
         }
     </style>
 </head>
 <body>
     
-    <table border="1">
+    <table >
         <tr>
             <th>Id</th>
             <th>Product</th>
             <th>Name</th>
             <th>Price</th>
+            <th>Action</th>
         </tr>
         <?php foreach($rows as $row):?>
             <tr>
@@ -69,7 +104,14 @@ $rows = $query->fetchAll(PDO::FETCH_OBJ);
                     <?php endif; ?>
                 </td>
                 <td><?=$row->name;?></td>
-                <td><?=$row->price;?></td>
+                <td class="price"><?=$row->price;?></td>
+                <td>
+                    <form action="">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="id" value="<?=$row->id;?>">
+                        <button>Delete</button>
+                    </form>
+                </td>
             </tr>
         <?php endforeach;?>
     </table>
