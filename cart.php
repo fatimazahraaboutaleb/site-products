@@ -39,7 +39,7 @@ if(@$_GET["action"]=="delete" && @$_GET["id"]){
             color:#FBA834;
         }
         button{
-            background-color:#387ADF;
+            background-color:#29aada;
             border:1px solid #FBA834;
             border-radius: 10px 35px;
             color:white;
@@ -47,7 +47,7 @@ if(@$_GET["action"]=="delete" && @$_GET["id"]){
         }
         button:hover{
             background-color:#FBA834;
-            border:1px solid #387ADF;
+            border:1px solid #29aada;
         }
     </style>
 </head>
