@@ -39,7 +39,7 @@ if(@$_GET["action"]=="delete" && @$_GET["id"]){
             color:#FBA834;
         }
         button{
-            background-color:#387ADF;
+            background-color:#29aada;
             border:1px solid #FBA834;
             border-radius: 10px 35px;
             color:white;
@@ -47,7 +47,7 @@ if(@$_GET["action"]=="delete" && @$_GET["id"]){
         }
         button:hover{
             background-color:#FBA834;
-            border:1px solid #387ADF;
+            border:1px solid #29aada;
         }
     </style>
 </head>
@@ -67,40 +67,40 @@ if(@$_GET["action"]=="delete" && @$_GET["id"]){
                 <td>
                     <?php $id=$row->id;?>
                     <?php if (@$id == 1):;?>
-                    <img src="/products/hodie.jpg">
+                    <img src="/projet-site/products/hodie.jpg">
                     <?php endif; ?>
                     <?php if (@$id ==2):;?>
-                    <img src="/products/sweater.jpg">
+                    <img src="/projet-site/products/sweater.jpg">
                     <?php endif; ?>
                     <?php if (@$id ==3):;?>
-                    <img src="/products/tshirt1.jpg">
+                    <img src="/projet-site/products/tshirt1.jpg">
                     <?php endif; ?>
                     <?php if (@$id ==4):;?>
-                    <img src="/products/tshirt2.jpg">
+                    <img src="/projet-site/products/tshirt2.jpg">
                     <?php endif; ?>
                     <?php if (@$id ==5):;?>
-                    <img src="/products/totebag1.jpg">
+                    <img src="/projet-site/products/totebag1.jpg">
                     <?php endif; ?>
                     <?php if (@$id ==6):;?>
-                    <img src="/products/totebag2.jpg">
+                    <img src="/projet-site/products/totebag2.jpg">
                     <?php endif; ?>
                     <?php if (@$id ==7): ;?>
-                    <img src="/products/totebag3.jpg">
+                    <img src="/projet-site/products/totebag3.jpg">
                     <?php endif; ?>
                     <?php if (@$id ==8): ;?>
-                    <img src="/products/notebook.jpg">
+                    <img src="/projet-site/products/notebook.jpg">
                     <?php endif; ?>
                     <?php if (@$id ==9): ;?>
-                    <img src="/products/bookmarks.jpg">
+                    <img src="/projet-site/products/bookmarks.jpg">
                     <?php endif; ?>
                     <?php if (@$id ==10): ;?>
-                    <img src="/products/washitape.jpg">
+                    <img src="/projet-site/products/washitape.jpg">
                     <?php endif; ?>
                     <?php if (@$id ==11): ;?>
-                    <img src="/products/stickers.jpg">
+                    <img src="/projet-site/products/stickers.jpg">
                     <?php endif; ?>
                     <?php if (@$id ==12): ;?>
-                    <img src="/products/posters.png">
+                    <img src="/projet-site/products/posters.png">
                     <?php endif; ?>
                 </td>
                 <td><?=$row->name;?></td>
